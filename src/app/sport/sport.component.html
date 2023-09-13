@@ -1,0 +1,8 @@
+<input type="text" #sportInput />
+<button (click)="onAddSport(sportInput.value)">ADD</button>
+<hr />
+<app-sport-detail [selectedSport]="selectedSport"></app-sport-detail>
+<app-sport-list
+  [sportList]="(sports$ | async)!"
+  (selectSport)="onSelectSport($event)"
+></app-sport-list>
